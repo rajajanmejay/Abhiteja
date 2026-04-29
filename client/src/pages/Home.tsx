@@ -274,6 +274,7 @@ export default function Home() {
             className="bg-white rounded-2xl p-8 shadow-sm border border-border space-y-5"
           >
             <input
+              name="name"
               type="text"
               required
               placeholder="Your Name"
@@ -281,6 +282,7 @@ export default function Home() {
             />
 
             <input
+              name="guests"
               type="number"
               min="1"
               required
@@ -288,19 +290,16 @@ export default function Home() {
               className="w-full border p-3 rounded-xl"
             />
 
-            <select className="w-full border p-3 rounded-xl" required>
+            <select
+              name="event"
+              required
+              className="w-full border p-3 rounded-xl"
+            >
               <option value="">Select Event</option>
-              <option>Both Events</option>
-              <option>Only Muhurtham</option>
-              <option>Only Reception</option>
+              <option value="Both Events">Both Events</option>
+              <option value="Only Muhurtham">Only Muhurtham</option>
+              <option value="Only Reception">Only Reception</option>
             </select>
-
-            <Button className="w-full rounded-xl py-6">
-              Submit RSVP
-            </Button>
-          </form>
-        </div>
-      </section>
 
       {/* Quote */}
       <section className="py-16 bg-background">
