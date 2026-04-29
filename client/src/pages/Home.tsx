@@ -286,7 +286,7 @@ export default function Home() {
               type="number"
               min="1"
               required
-              placeholder="How many attending?"
+              placeholder="How many attending including you?"
               className="w-full border p-3 rounded-xl"
             />
 
