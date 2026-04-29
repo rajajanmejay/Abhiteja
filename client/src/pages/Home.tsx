@@ -169,7 +169,7 @@ export default function Home() {
                 </div>
 
                 <a
-                  href="https://share.google/jI8nHB7W07rsYRAlS"
+                  href="https://maps.app.goo.gl/yYJXgBh9RkVdDdXc7"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center mt-7 w-full bg-primary text-white px-5 py-3 rounded-xl font-medium shadow-md hover:shadow-xl hover:brightness-110 transition-all duration-300"
@@ -205,7 +205,7 @@ export default function Home() {
                 </div>
 
                 <a
-                  href="https://share.google/n5t73BNQSy9y5ZyIk"
+                  href="https://maps.app.goo.gl/vV7Pxu2pQf96o3p66"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center mt-7 w-full bg-primary text-white px-5 py-3 rounded-xl font-medium shadow-md hover:shadow-xl hover:brightness-110 transition-all duration-300"
