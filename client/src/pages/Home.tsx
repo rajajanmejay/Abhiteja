@@ -39,9 +39,28 @@ export default function Home() {
     return () => clearInterval(timer);
   }, []);
 
-  const handleRSVP = (e: React.FormEvent) => {
+  const handleRSVP = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    alert('Thank you for your RSVP!');
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const payload = {
+      name: formData.get("name"),
+      guests: formData.get("guests"),
+      event: formData.get("event"),
+    };
+
+    await fetch(
+      "https://script.google.com/macros/s/AKfycbyxCTB7U-nW_hVTljp1it3Ly7T-zdTrqJwDEKrxuXO7eqHajJuRgOB1yCKOQB0Ku-Ezdg/exec",
+      {
+        method: "POST",
+        body: JSON.stringify(payload),
+      }
+    );
+
+    alert("Thank you! RSVP submitted.");
+    form.reset();
   };
 
   return (
@@ -214,6 +233,31 @@ export default function Home() {
                 </a>
               </div>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-background">
+        <div className="container">
+          <div className="max-w-5xl mx-auto">
+            <img
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663599308526/TwaNmUDhvhMEyP8PmsFKJu/mandap_illustration-N7gXB2Hv56eght6WHwyayc.webp"
+              alt="Wedding Mandap"
+              className="w-full h-auto rounded-2xl shadow-lg mb-10"
+            />
+
+            <div className="text-center max-w-3xl mx-auto px-4">
+              <h2 className="font-display text-4xl text-primary mb-5">
+                A Sacred Union
+              </h2>
+
+              <p className="text-foreground/80 leading-relaxed text-lg">
+                Under the sacred mandap, two hearts unite in a beautiful ceremony
+                steeped in tradition, love, and the blessings of family.
+                We invite you to be part of this momentous occasion as
+                Abhishek and Tejakshi embark on their journey together.
+              </p>
+            </div>
           </div>
         </div>
       </section>
