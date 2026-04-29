@@ -71,9 +71,9 @@ export default function Home() {
         <div className="relative z-10 text-center px-4 max-w-2xl">
           <div className="mb-8 flex justify-center">
             <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663599308526/TwaNmUDhvhMEyP8PmsFKJu/couple_silhouette_romantic-ckbuxBoBdnQnxikfS5hMkP.webp"
-              alt="Bride and Groom"
-              className="w-48 h-48 object-contain"
+              src="/Their_Picture.png"
+              alt="Abhishek and Tejakshi"
+              className="w-72 md:w-[420px] h-auto object-contain mx-auto drop-shadow-xl"
             />
           </div>
 
@@ -114,14 +114,12 @@ export default function Home() {
             ].map((item) => (
               <div
                 key={item.label}
-                className="bg-white rounded-lg p-6 text-center border border-border shadow-sm hover:shadow-md transition-shadow"
+                className="bg-white rounded-xl p-6 text-center border border-border shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
               >
                 <div className="text-3xl md:text-4xl font-display text-primary mb-2">
                   {String(item.value).padStart(2, '0')}
                 </div>
-                <div className="text-sm text-foreground/70 font-body">
-                  {item.label}
-                </div>
+                <div className="text-sm text-foreground/70">{item.label}</div>
               </div>
             ))}
           </div>
@@ -145,25 +143,24 @@ export default function Home() {
           </h2>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-
             {/* Muhurtham */}
-            <Card className="bg-white border border-border overflow-hidden hover:shadow-lg transition-shadow">
+            <Card className="bg-white border border-border rounded-2xl overflow-hidden shadow-sm hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
               <div className="p-8">
-                <div className="flex items-center gap-3 mb-4">
-                  <Calendar className="w-6 h-6 text-primary" />
+                <div className="flex items-center gap-3 mb-6">
+                  <Calendar className="w-6 h-6 text-primary shrink-0" />
                   <h3 className="text-2xl font-display text-primary">
                     Muhurtham
                   </h3>
                 </div>
 
-                <div className="space-y-3 text-foreground/80">
-                  <div className="flex items-center gap-2">
-                    <Clock className="w-5 h-5 text-primary/60" />
-                    <span>29 May 2026 • 5:30 AM to 7:00 AM</span>
+                <div className="space-y-4 text-foreground/80">
+                  <div className="flex items-center gap-3">
+                    <Clock className="w-5 h-5 text-primary/60 shrink-0" />
+                    <span>29 May 2026 • 5:30 AM – 7:00 AM</span>
                   </div>
 
-                  <div className="flex items-start gap-2">
-                    <MapPin className="w-5 h-5 text-primary/60 mt-1" />
+                  <div className="flex items-start gap-3">
+                    <MapPin className="w-5 h-5 text-primary/60 shrink-0 mt-1" />
                     <span>
                       Thangamalai Shri Subrahmanya Swamy Temple,
                       Kaval Byrasandra, Bangalore - 560006
@@ -175,31 +172,31 @@ export default function Home() {
                   href="https://share.google/jI8nHB7W07rsYRAlS"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block mt-6 bg-primary text-white px-5 py-3 rounded-lg hover:opacity-90"
+                  className="inline-flex items-center justify-center mt-7 w-full bg-primary text-white px-5 py-3 rounded-xl font-medium shadow-md hover:shadow-xl hover:brightness-110 transition-all duration-300"
                 >
-                  View Location
+                  📍 Open in Google Maps
                 </a>
               </div>
             </Card>
 
             {/* Reception */}
-            <Card className="bg-white border border-border overflow-hidden hover:shadow-lg transition-shadow">
+            <Card className="bg-white border border-border rounded-2xl overflow-hidden shadow-sm hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
               <div className="p-8">
-                <div className="flex items-center gap-3 mb-4">
-                  <Calendar className="w-6 h-6 text-primary" />
+                <div className="flex items-center gap-3 mb-6">
+                  <Calendar className="w-6 h-6 text-primary shrink-0" />
                   <h3 className="text-2xl font-display text-primary">
                     Reception
                   </h3>
                 </div>
 
-                <div className="space-y-3 text-foreground/80">
-                  <div className="flex items-center gap-2">
-                    <Clock className="w-5 h-5 text-primary/60" />
-                    <span>29 May 2026 • 6:00 PM onwards</span>
+                <div className="space-y-4 text-foreground/80">
+                  <div className="flex items-center gap-3">
+                    <Clock className="w-5 h-5 text-primary/60 shrink-0" />
+                    <span>29 May 2026 • 6:00 PM Onwards</span>
                   </div>
 
-                  <div className="flex items-start gap-2">
-                    <MapPin className="w-5 h-5 text-primary/60 mt-1" />
+                  <div className="flex items-start gap-3">
+                    <MapPin className="w-5 h-5 text-primary/60 shrink-0 mt-1" />
                     <span>
                       HMT Executive Club, Gangamma Circle,
                       Jalahalli, Bangalore - 560013
@@ -211,42 +208,32 @@ export default function Home() {
                   href="https://share.google/n5t73BNQSy9y5ZyIk"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block mt-6 bg-primary text-white px-5 py-3 rounded-lg hover:opacity-90"
+                  className="inline-flex items-center justify-center mt-7 w-full bg-primary text-white px-5 py-3 rounded-xl font-medium shadow-md hover:shadow-xl hover:brightness-110 transition-all duration-300"
                 >
-                  View Location
+                  📍 Open in Google Maps
                 </a>
               </div>
             </Card>
-
           </div>
         </div>
       </section>
 
-      {/* Divider */}
-      <div className="flex justify-center py-12 bg-background">
-        <img
-          src="https://d2xsxph8kpxj0f.cloudfront.net/310519663599308526/TwaNmUDhvhMEyP8PmsFKJu/floral_divider_ornament-VDeW4ABvyax7xxMC6z8paw.webp"
-          alt="Divider"
-          className="w-full max-w-2xl h-auto"
-        />
-      </div>
-
       {/* RSVP */}
       <section className="py-16 bg-background">
-        <div className="container max-w-2xl mx-auto">
+        <div className="container max-w-2xl mx-auto px-4">
           <h2 className="text-center font-display text-4xl text-primary mb-10">
             RSVP
           </h2>
 
           <form
             onSubmit={handleRSVP}
-            className="bg-white rounded-xl p-8 shadow-sm border border-border space-y-5"
+            className="bg-white rounded-2xl p-8 shadow-sm border border-border space-y-5"
           >
             <input
               type="text"
               required
               placeholder="Your Name"
-              className="w-full border p-3 rounded-lg"
+              className="w-full border p-3 rounded-xl"
             />
 
             <input
@@ -254,60 +241,28 @@ export default function Home() {
               min="1"
               required
               placeholder="How many attending?"
-              className="w-full border p-3 rounded-lg"
+              className="w-full border p-3 rounded-xl"
             />
 
-            <select className="w-full border p-3 rounded-lg" required>
+            <select className="w-full border p-3 rounded-xl" required>
               <option value="">Select Event</option>
               <option>Both Events</option>
               <option>Only Muhurtham</option>
               <option>Only Reception</option>
             </select>
 
-            <Button className="w-full">Submit RSVP</Button>
+            <Button className="w-full rounded-xl py-6">
+              Submit RSVP
+            </Button>
           </form>
-        </div>
-      </section>
-
-      {/* Divider */}
-      <div className="flex justify-center py-12 bg-background">
-        <img
-          src="https://d2xsxph8kpxj0f.cloudfront.net/310519663599308526/TwaNmUDhvhMEyP8PmsFKJu/floral_divider_ornament-VDeW4ABvyax7xxMC6z8paw.webp"
-          alt="Divider"
-          className="w-full max-w-2xl h-auto"
-        />
-      </div>
-
-      {/* Mandap */}
-      <section className="py-16 bg-background">
-        <div className="container">
-          <div className="max-w-4xl mx-auto">
-            <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663599308526/TwaNmUDhvhMEyP8PmsFKJu/mandap_illustration-N7gXB2Hv56eght6WHwyayc.webp"
-              alt="Wedding Mandap"
-              className="w-full h-auto rounded-lg shadow-lg mb-8"
-            />
-
-            <div className="text-center">
-              <h2 className="font-display text-3xl text-primary mb-4">
-                A Sacred Union
-              </h2>
-
-              <p className="text-foreground/80 leading-relaxed max-w-2xl mx-auto">
-                Under the sacred mandap, two hearts unite in a beautiful
-                ceremony steeped in tradition, love, and the blessings of
-                family.
-              </p>
-            </div>
-          </div>
         </div>
       </section>
 
       {/* Quote */}
       <section className="py-16 bg-background">
         <div className="container max-w-4xl mx-auto text-center italic text-lg text-foreground/80 leading-relaxed px-4">
-          “To love or have loved, that is enough. Ask nothing further. There is
-          no other pearl to be found in the dark folds of life.”
+          “To love or have loved, that is enough. Ask nothing further.
+          There is no other pearl to be found in the dark folds of life.”
           <br />
           <br />
           — Victor Hugo, Les Misérables
@@ -316,7 +271,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="bg-white border-t border-border py-12">
-        <div className="container text-center">
+        <div className="container text-center px-4">
           <h3 className="font-display text-2xl text-primary mb-2">
             Abhishek & Tejakshi
           </h3>
@@ -329,12 +284,6 @@ export default function Home() {
           <p className="text-sm text-foreground/60">
             "Two souls, one beautiful journey"
           </p>
-
-          <div className="mt-8 pt-8 border-t border-border">
-            <p className="text-xs text-foreground/50">
-              With love and gratitude for your presence in our celebration
-            </p>
-          </div>
         </div>
       </footer>
     </div>
