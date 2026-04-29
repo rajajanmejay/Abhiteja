@@ -47,6 +47,7 @@ export default function Home() {
 
     const payload = {
       name: formData.get('name'),
+      phone: formData.get('phone'),
       guests: formData.get('guests'),
       event: formData.get('event'),
     };
@@ -280,6 +281,13 @@ export default function Home() {
               type="text"
               required
               placeholder="Your Name"
+              className="w-full border p-3 rounded-xl"
+            />
+
+            <input
+              name="phone"
+              type="tel"
+              placeholder="Phone Number (optional)"
               className="w-full border p-3 rounded-xl"
             />
 
