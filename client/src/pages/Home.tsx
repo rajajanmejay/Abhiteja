@@ -301,6 +301,13 @@ export default function Home() {
               <option value="Only Reception">Only Reception</option>
             </select>
 
+            <Button className="w-full rounded-xl py-6">
+              Submit RSVP
+            </Button>
+          </form>
+        </div>
+      </section>
+
       {/* Quote */}
       <section className="py-16 bg-background">
         <div className="container max-w-4xl mx-auto text-center italic text-lg text-foreground/80 leading-relaxed px-4">
@@ -325,10 +332,42 @@ export default function Home() {
           <p className="text-foreground/70 mb-6">+91 78925 83234</p>
 
           <p className="text-sm text-foreground/60">
-            "Two souls, one beautiful journey"
+            Two souls, one beautiful journey
           </p>
         </div>
       </footer>
     </div>
   );
+}
+
+{/* Quote */ }
+<section className="py-16 bg-background">
+  <div className="container max-w-4xl mx-auto text-center italic text-lg text-foreground/80 leading-relaxed px-4">
+    “To love or have loved, that is enough. Ask nothing further.
+    There is no other pearl to be found in the dark folds of life.”
+    <br />
+    <br />
+    — Victor Hugo, Les Misérables
+  </div>
+</section>
+
+{/* Footer */ }
+<footer className="bg-white border-t border-border py-12">
+  <div className="container text-center px-4">
+    <h3 className="font-display text-2xl text-primary mb-2">
+      Abhishek & Tejakshi
+    </h3>
+
+    <p className="text-foreground/70 mb-2">May 29, 2026</p>
+
+    <p className="text-foreground/70">+91 97412 15772</p>
+    <p className="text-foreground/70 mb-6">+91 78925 83234</p>
+
+    <p className="text-sm text-foreground/60">
+      "Two souls, one beautiful journey"
+    </p>
+  </div>
+</footer>
+        </div >
+        );
 }
