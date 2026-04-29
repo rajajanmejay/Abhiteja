@@ -144,7 +144,9 @@ export default function Home() {
             Wedding Events
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+
+            {/* Muhurtham */}
             <Card className="bg-white border border-border overflow-hidden hover:shadow-lg transition-shadow">
               <div className="p-8">
                 <div className="flex items-center gap-3 mb-4">
@@ -157,17 +159,30 @@ export default function Home() {
                 <div className="space-y-3 text-foreground/80">
                   <div className="flex items-center gap-2">
                     <Clock className="w-5 h-5 text-primary/60" />
-                    <span>5:30 AM - 7:30 AM</span>
+                    <span>29 May 2026 • 5:30 AM to 7:00 AM</span>
                   </div>
 
-                  <div className="flex items-center gap-2">
-                    <MapPin className="w-5 h-5 text-primary/60" />
-                    <span>Auspicious Wedding Ceremony</span>
+                  <div className="flex items-start gap-2">
+                    <MapPin className="w-5 h-5 text-primary/60 mt-1" />
+                    <span>
+                      Thangamalai Shri Subrahmanya Swamy Temple,
+                      Kaval Byrasandra, Bangalore - 560006
+                    </span>
                   </div>
                 </div>
+
+                <a
+                  href="https://share.google/jI8nHB7W07rsYRAlS"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-6 bg-primary text-white px-5 py-3 rounded-lg hover:opacity-90"
+                >
+                  View Location
+                </a>
               </div>
             </Card>
 
+            {/* Reception */}
             <Card className="bg-white border border-border overflow-hidden hover:shadow-lg transition-shadow">
               <div className="p-8">
                 <div className="flex items-center gap-3 mb-4">
@@ -180,16 +195,29 @@ export default function Home() {
                 <div className="space-y-3 text-foreground/80">
                   <div className="flex items-center gap-2">
                     <Clock className="w-5 h-5 text-primary/60" />
-                    <span>6:00 PM Onwards</span>
+                    <span>29 May 2026 • 6:00 PM onwards</span>
                   </div>
 
-                  <div className="flex items-center gap-2">
-                    <MapPin className="w-5 h-5 text-primary/60" />
-                    <span>Celebration & Dinner</span>
+                  <div className="flex items-start gap-2">
+                    <MapPin className="w-5 h-5 text-primary/60 mt-1" />
+                    <span>
+                      HMT Executive Club, Gangamma Circle,
+                      Jalahalli, Bangalore - 560013
+                    </span>
                   </div>
                 </div>
+
+                <a
+                  href="https://share.google/n5t73BNQSy9y5ZyIk"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-6 bg-primary text-white px-5 py-3 rounded-lg hover:opacity-90"
+                >
+                  View Location
+                </a>
               </div>
             </Card>
+
           </div>
         </div>
       </section>
