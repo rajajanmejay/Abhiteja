@@ -71,9 +71,9 @@ export default function Home() {
         <div className="relative z-10 text-center px-4 max-w-2xl">
           <div className="mb-8 flex justify-center">
             <img
-              src="/Their_Picture.png"
-              alt="Abhishek and Tejakshi"
-              className="w-72 md:w-[420px] h-auto object-contain mx-auto drop-shadow-xl"
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663599308526/TwaNmUDhvhMEyP8PmsFKJu/couple_silhouette_romantic-ckbuxBoBdnQnxikfS5hMkP.webp"
+              alt="Bride and Groom"
+              className="w-48 h-48 object-contain mx-auto"
             />
           </div>
 
