@@ -46,20 +46,20 @@ export default function Home() {
     const formData = new FormData(form);
 
     const payload = {
-      name: formData.get("name"),
-      guests: formData.get("guests"),
-      event: formData.get("event"),
+      name: formData.get('name'),
+      guests: formData.get('guests'),
+      event: formData.get('event'),
     };
 
     await fetch(
-      "https://script.google.com/macros/s/AKfycbyxCTB7U-nW_hVTljp1it3Ly7T-zdTrqJwDEKrxuXO7eqHajJuRgOB1yCKOQB0Ku-Ezdg/exec",
+      'https://script.google.com/macros/s/AKfycbyxCTB7U-nW_hVTljp1it3Ly7T-zdTrqJwDEKrxuXO7eqHajJuRgOB1yCKOQB0Ku-Ezdg/exec',
       {
-        method: "POST",
+        method: 'POST',
         body: JSON.stringify(payload),
       }
     );
 
-    alert("Thank you! RSVP submitted.");
+    alert('Thank you! RSVP submitted.');
     form.reset();
   };
 
@@ -85,7 +85,7 @@ export default function Home() {
           backgroundPosition: 'center',
         }}
       >
-        <div className="absolute inset-0 bg-white/20 backdrop-blur-sm"></div>
+        <div className="absolute inset-0 bg-white/20 backdrop-blur-sm" />
 
         <div className="relative z-10 text-center px-4 max-w-2xl">
           <div className="mb-8 flex justify-center">
@@ -138,7 +138,9 @@ export default function Home() {
                 <div className="text-3xl md:text-4xl font-display text-primary mb-2">
                   {String(item.value).padStart(2, '0')}
                 </div>
-                <div className="text-sm text-foreground/70">{item.label}</div>
+                <div className="text-sm text-foreground/70">
+                  {item.label}
+                </div>
               </div>
             ))}
           </div>
@@ -154,7 +156,7 @@ export default function Home() {
         />
       </div>
 
-      {/* Events */}
+      {/* Wedding Events */}
       <section className="py-16 bg-background">
         <div className="container">
           <h2 className="text-center font-display text-4xl text-primary mb-12">
@@ -166,7 +168,7 @@ export default function Home() {
             <Card className="bg-white border border-border rounded-2xl overflow-hidden shadow-sm hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
               <div className="p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <Calendar className="w-6 h-6 text-primary shrink-0" />
+                  <Calendar className="w-6 h-6 text-primary" />
                   <h3 className="text-2xl font-display text-primary">
                     Muhurtham
                   </h3>
@@ -174,12 +176,12 @@ export default function Home() {
 
                 <div className="space-y-4 text-foreground/80">
                   <div className="flex items-center gap-3">
-                    <Clock className="w-5 h-5 text-primary/60 shrink-0" />
+                    <Clock className="w-5 h-5 text-primary/60" />
                     <span>29 May 2026 • 5:30 AM – 7:00 AM</span>
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <MapPin className="w-5 h-5 text-primary/60 shrink-0 mt-1" />
+                    <MapPin className="w-5 h-5 text-primary/60 mt-1" />
                     <span>
                       Thangamalai Shri Subrahmanya Swamy Temple,
                       Kaval Byrasandra, Bangalore - 560006
@@ -191,7 +193,7 @@ export default function Home() {
                   href="https://maps.app.goo.gl/yYJXgBh9RkVdDdXc7"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center mt-7 w-full bg-primary text-white px-5 py-3 rounded-xl font-medium shadow-md hover:shadow-xl hover:brightness-110 transition-all duration-300"
+                  className="inline-flex items-center justify-center mt-7 w-full bg-primary text-white px-5 py-3 rounded-xl font-medium shadow-md hover:shadow-xl transition-all"
                 >
                   📍 Open in Google Maps
                 </a>
@@ -202,7 +204,7 @@ export default function Home() {
             <Card className="bg-white border border-border rounded-2xl overflow-hidden shadow-sm hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
               <div className="p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <Calendar className="w-6 h-6 text-primary shrink-0" />
+                  <Calendar className="w-6 h-6 text-primary" />
                   <h3 className="text-2xl font-display text-primary">
                     Reception
                   </h3>
@@ -210,12 +212,12 @@ export default function Home() {
 
                 <div className="space-y-4 text-foreground/80">
                   <div className="flex items-center gap-3">
-                    <Clock className="w-5 h-5 text-primary/60 shrink-0" />
+                    <Clock className="w-5 h-5 text-primary/60" />
                     <span>29 May 2026 • 6:00 PM Onwards</span>
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <MapPin className="w-5 h-5 text-primary/60 shrink-0 mt-1" />
+                    <MapPin className="w-5 h-5 text-primary/60 mt-1" />
                     <span>
                       HMT Executive Club, Gangamma Circle,
                       Jalahalli, Bangalore - 560013
@@ -227,7 +229,7 @@ export default function Home() {
                   href="https://maps.app.goo.gl/vV7Pxu2pQf96o3p66"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center mt-7 w-full bg-primary text-white px-5 py-3 rounded-xl font-medium shadow-md hover:shadow-xl hover:brightness-110 transition-all duration-300"
+                  className="inline-flex items-center justify-center mt-7 w-full bg-primary text-white px-5 py-3 rounded-xl font-medium shadow-md hover:shadow-xl transition-all"
                 >
                   📍 Open in Google Maps
                 </a>
@@ -237,6 +239,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Sacred Union */}
       <section className="py-16 bg-background">
         <div className="container">
           <div className="max-w-5xl mx-auto">
@@ -252,10 +255,9 @@ export default function Home() {
               </h2>
 
               <p className="text-foreground/80 leading-relaxed text-lg">
-                Under the sacred mandap, two hearts unite in a beautiful ceremony
-                steeped in tradition, love, and the blessings of family.
-                We invite you to be part of this momentous occasion as
-                Abhishek and Tejakshi embark on their journey together.
+                Under the sacred mandap, two hearts unite in a beautiful
+                ceremony steeped in tradition, love, and the blessings of
+                family. We invite you to be part of this momentous occasion.
               </p>
             </div>
           </div>
@@ -327,7 +329,6 @@ export default function Home() {
           </h3>
 
           <p className="text-foreground/70 mb-2">May 29, 2026</p>
-
           <p className="text-foreground/70">+91 97412 15772</p>
           <p className="text-foreground/70 mb-6">+91 78925 83234</p>
 
@@ -338,36 +339,4 @@ export default function Home() {
       </footer>
     </div>
   );
-}
-
-{/* Quote */ }
-<section className="py-16 bg-background">
-  <div className="container max-w-4xl mx-auto text-center italic text-lg text-foreground/80 leading-relaxed px-4">
-    “To love or have loved, that is enough. Ask nothing further.
-    There is no other pearl to be found in the dark folds of life.”
-    <br />
-    <br />
-    — Victor Hugo, Les Misérables
-  </div>
-</section>
-
-{/* Footer */ }
-<footer className="bg-white border-t border-border py-12">
-  <div className="container text-center px-4">
-    <h3 className="font-display text-2xl text-primary mb-2">
-      Abhishek & Tejakshi
-    </h3>
-
-    <p className="text-foreground/70 mb-2">May 29, 2026</p>
-
-    <p className="text-foreground/70">+91 97412 15772</p>
-    <p className="text-foreground/70 mb-6">+91 78925 83234</p>
-
-    <p className="text-sm text-foreground/60">
-      "Two souls, one beautiful journey"
-    </p>
-  </div>
-</footer>
-        </div>
-        );
 }
