@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { Calendar, Clock, MapPin, Phone, Heart } from 'lucide-react';
+import { Calendar, Clock, MapPin } from 'lucide-react';
 
 interface CountdownTime {
   days: number;
@@ -16,12 +16,6 @@ export default function Home() {
     hours: 0,
     minutes: 0,
     seconds: 0,
-  });
-
-  const [formData, setFormData] = useState({
-    name: '',
-    guests: '1',
-    attending: '',
   });
 
   useEffect(() => {
@@ -45,165 +39,274 @@ export default function Home() {
     return () => clearInterval(timer);
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleRSVP = (e: React.FormEvent) => {
     e.preventDefault();
     alert('Thank you for your RSVP!');
   };
 
   return (
-    <div className="min-h-screen bg-[#f9eef1] text-slate-800">
-
-      {/* Navbar */}
-      <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
+    <div className="min-h-screen bg-background">
+      {/* Navigation */}
+      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border">
         <div className="container py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-serif text-[#8a4f72] font-bold">
+          <h1 className="text-2xl font-display text-primary">
             Abhishek & Tejakshi
           </h1>
-          <span className="text-sm">May 29, 2026</span>
+          <div className="text-sm text-foreground/70">May 29, 2026</div>
         </div>
       </nav>
 
       {/* Hero */}
       <section
-        className="min-h-screen flex items-center justify-center bg-cover bg-center px-4"
+        className="relative h-screen flex items-center justify-center overflow-hidden"
         style={{
           backgroundImage:
-            "url('/invitation.jpg')"
+            'url(https://d2xsxph8kpxj0f.cloudfront.net/310519663599308526/TwaNmUDhvhMEyP8PmsFKJu/wedding_hero_background-7K9uwTimMG9MTjuHRBDEuq.webp)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
         }}
       >
-        <div className="bg-white/70 backdrop-blur-md p-8 rounded-3xl text-center max-w-3xl shadow-xl">
-          <h1 className="text-6xl md:text-7xl font-serif text-[#8a4f72] mb-4">
+        <div className="absolute inset-0 bg-white/20 backdrop-blur-sm"></div>
+
+        <div className="relative z-10 text-center px-4 max-w-2xl">
+          <div className="mb-8 flex justify-center">
+            <img
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663599308526/TwaNmUDhvhMEyP8PmsFKJu/couple_silhouette_romantic-ckbuxBoBdnQnxikfS5hMkP.webp"
+              alt="Bride and Groom"
+              className="w-48 h-48 object-contain"
+            />
+          </div>
+
+          <h1 className="text-6xl md:text-7xl font-display text-primary mb-4">
             Abhishek & Tejakshi
           </h1>
-          <p className="text-xl italic mb-6">
-            Together with their families invite you
+
+          <p className="text-xl text-foreground/80 mb-8 font-light">
+            Together in love, united in celebration
           </p>
-          <p className="text-lg">
-            Friday, May 29, 2026 • Reception at 6 PM
-          </p>
-          <p className="mt-3">
-            HMT Executive Club, Gangamma Circle, Jalahalli, Bangalore
-          </p>
+
+          <p className="text-lg text-foreground/70">May 29, 2026</p>
         </div>
       </section>
+
+      {/* Divider */}
+      <div className="flex justify-center py-12 bg-background">
+        <img
+          src="https://d2xsxph8kpxj0f.cloudfront.net/310519663599308526/TwaNmUDhvhMEyP8PmsFKJu/floral_divider_ornament-VDeW4ABvyax7xxMC6z8paw.webp"
+          alt="Divider"
+          className="w-full max-w-2xl h-auto"
+        />
+      </div>
 
       {/* Countdown */}
-      <section className="py-20 px-4">
-        <h2 className="text-center text-4xl font-serif text-[#8a4f72] mb-12">
-          Time Left For Wedding
-        </h2>
+      <section className="py-16 bg-background">
+        <div className="container">
+          <h2 className="text-center font-display text-4xl text-primary mb-12">
+            Time Left For Wedding
+          </h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-5 max-w-3xl mx-auto">
-          {[
-            { label: 'Days', value: countdown.days },
-            { label: 'Hours', value: countdown.hours },
-            { label: 'Minutes', value: countdown.minutes },
-            { label: 'Seconds', value: countdown.seconds },
-          ].map((item) => (
-            <Card key={item.label} className="p-6 text-center shadow-lg">
-              <div className="text-4xl font-bold text-[#8a4f72]">
-                {String(item.value).padStart(2, '0')}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-2xl mx-auto">
+            {[
+              { label: 'Days', value: countdown.days },
+              { label: 'Hours', value: countdown.hours },
+              { label: 'Minutes', value: countdown.minutes },
+              { label: 'Seconds', value: countdown.seconds },
+            ].map((item) => (
+              <div
+                key={item.label}
+                className="bg-white rounded-lg p-6 text-center border border-border shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div className="text-3xl md:text-4xl font-display text-primary mb-2">
+                  {String(item.value).padStart(2, '0')}
+                </div>
+                <div className="text-sm text-foreground/70 font-body">
+                  {item.label}
+                </div>
               </div>
-              <div className="mt-2 text-sm">{item.label}</div>
-            </Card>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
+
+      {/* Divider */}
+      <div className="flex justify-center py-12 bg-background">
+        <img
+          src="https://d2xsxph8kpxj0f.cloudfront.net/310519663599308526/TwaNmUDhvhMEyP8PmsFKJu/floral_divider_ornament-VDeW4ABvyax7xxMC6z8paw.webp"
+          alt="Divider"
+          className="w-full max-w-2xl h-auto"
+        />
+      </div>
 
       {/* Events */}
-      <section className="py-16 px-4 bg-white/60">
-        <h2 className="text-center text-4xl font-serif text-[#8a4f72] mb-12">
-          Wedding Events
-        </h2>
+      <section className="py-16 bg-background">
+        <div className="container">
+          <h2 className="text-center font-display text-4xl text-primary mb-12">
+            Wedding Events
+          </h2>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          <Card className="p-8 shadow-lg">
-            <h3 className="text-2xl font-semibold mb-4">Muhurtham</h3>
-            <p>5:30 AM – 7:30 AM</p>
-            <p>Sacred Wedding Ceremony</p>
-          </Card>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <Card className="bg-white border border-border overflow-hidden hover:shadow-lg transition-shadow">
+              <div className="p-8">
+                <div className="flex items-center gap-3 mb-4">
+                  <Calendar className="w-6 h-6 text-primary" />
+                  <h3 className="text-2xl font-display text-primary">
+                    Muhurtham
+                  </h3>
+                </div>
 
-          <Card className="p-8 shadow-lg">
-            <h3 className="text-2xl font-semibold mb-4">Reception</h3>
-            <p>6:00 PM onwards</p>
-            <p>Celebration & Dinner</p>
-          </Card>
+                <div className="space-y-3 text-foreground/80">
+                  <div className="flex items-center gap-2">
+                    <Clock className="w-5 h-5 text-primary/60" />
+                    <span>5:30 AM - 7:30 AM</span>
+                  </div>
+
+                  <div className="flex items-center gap-2">
+                    <MapPin className="w-5 h-5 text-primary/60" />
+                    <span>Auspicious Wedding Ceremony</span>
+                  </div>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="bg-white border border-border overflow-hidden hover:shadow-lg transition-shadow">
+              <div className="p-8">
+                <div className="flex items-center gap-3 mb-4">
+                  <Calendar className="w-6 h-6 text-primary" />
+                  <h3 className="text-2xl font-display text-primary">
+                    Reception
+                  </h3>
+                </div>
+
+                <div className="space-y-3 text-foreground/80">
+                  <div className="flex items-center gap-2">
+                    <Clock className="w-5 h-5 text-primary/60" />
+                    <span>6:00 PM Onwards</span>
+                  </div>
+
+                  <div className="flex items-center gap-2">
+                    <MapPin className="w-5 h-5 text-primary/60" />
+                    <span>Celebration & Dinner</span>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </div>
         </div>
       </section>
 
+      {/* Divider */}
+      <div className="flex justify-center py-12 bg-background">
+        <img
+          src="https://d2xsxph8kpxj0f.cloudfront.net/310519663599308526/TwaNmUDhvhMEyP8PmsFKJu/floral_divider_ornament-VDeW4ABvyax7xxMC6z8paw.webp"
+          alt="Divider"
+          className="w-full max-w-2xl h-auto"
+        />
+      </div>
+
       {/* RSVP */}
-      <section className="py-20 px-4">
-        <h2 className="text-center text-4xl font-serif text-[#8a4f72] mb-12">
-          RSVP
-        </h2>
+      <section className="py-16 bg-background">
+        <div className="container max-w-2xl mx-auto">
+          <h2 className="text-center font-display text-4xl text-primary mb-10">
+            RSVP
+          </h2>
 
-        <form
-          onSubmit={handleSubmit}
-          className="max-w-2xl mx-auto bg-white p-8 rounded-3xl shadow-xl space-y-6"
-        >
-          <input
-            type="text"
-            placeholder="Your Name"
-            className="w-full border p-4 rounded-xl"
-            required
-            onChange={(e) =>
-              setFormData({ ...formData, name: e.target.value })
-            }
-          />
-
-          <input
-            type="number"
-            min="1"
-            placeholder="How many attending?"
-            className="w-full border p-4 rounded-xl"
-            required
-            onChange={(e) =>
-              setFormData({ ...formData, guests: e.target.value })
-            }
-          />
-
-          <select
-            className="w-full border p-4 rounded-xl"
-            required
-            onChange={(e) =>
-              setFormData({ ...formData, attending: e.target.value })
-            }
+          <form
+            onSubmit={handleRSVP}
+            className="bg-white rounded-xl p-8 shadow-sm border border-border space-y-5"
           >
-            <option value="">Select Event</option>
-            <option>Both Events</option>
-            <option>Only Muhurtham</option>
-            <option>Only Reception</option>
-          </select>
+            <input
+              type="text"
+              required
+              placeholder="Your Name"
+              className="w-full border p-3 rounded-lg"
+            />
 
-          <Button className="w-full bg-[#8a4f72] hover:bg-[#733b5e] text-white py-4 rounded-xl">
-            Submit RSVP
-          </Button>
-        </form>
+            <input
+              type="number"
+              min="1"
+              required
+              placeholder="How many attending?"
+              className="w-full border p-3 rounded-lg"
+            />
+
+            <select className="w-full border p-3 rounded-lg" required>
+              <option value="">Select Event</option>
+              <option>Both Events</option>
+              <option>Only Muhurtham</option>
+              <option>Only Reception</option>
+            </select>
+
+            <Button className="w-full">Submit RSVP</Button>
+          </form>
+        </div>
+      </section>
+
+      {/* Divider */}
+      <div className="flex justify-center py-12 bg-background">
+        <img
+          src="https://d2xsxph8kpxj0f.cloudfront.net/310519663599308526/TwaNmUDhvhMEyP8PmsFKJu/floral_divider_ornament-VDeW4ABvyax7xxMC6z8paw.webp"
+          alt="Divider"
+          className="w-full max-w-2xl h-auto"
+        />
+      </div>
+
+      {/* Mandap */}
+      <section className="py-16 bg-background">
+        <div className="container">
+          <div className="max-w-4xl mx-auto">
+            <img
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663599308526/TwaNmUDhvhMEyP8PmsFKJu/mandap_illustration-N7gXB2Hv56eght6WHwyayc.webp"
+              alt="Wedding Mandap"
+              className="w-full h-auto rounded-lg shadow-lg mb-8"
+            />
+
+            <div className="text-center">
+              <h2 className="font-display text-3xl text-primary mb-4">
+                A Sacred Union
+              </h2>
+
+              <p className="text-foreground/80 leading-relaxed max-w-2xl mx-auto">
+                Under the sacred mandap, two hearts unite in a beautiful
+                ceremony steeped in tradition, love, and the blessings of
+                family.
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Quote */}
-      <section className="py-16 px-4 bg-white/60">
-        <div className="max-w-4xl mx-auto text-center italic text-xl leading-loose text-[#6a4b5d]">
-          “To love or have loved, that is enough. Ask nothing further.
-          There is no other pearl to be found in the dark folds of life.”
+      <section className="py-16 bg-background">
+        <div className="container max-w-4xl mx-auto text-center italic text-lg text-foreground/80 leading-relaxed px-4">
+          “To love or have loved, that is enough. Ask nothing further. There is
+          no other pearl to be found in the dark folds of life.”
           <br />
-          <span className="font-semibold">
-            — Victor Hugo, Les Misérables
-          </span>
+          <br />
+          — Victor Hugo, Les Misérables
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-14 px-4 text-center">
-        <h3 className="text-2xl font-serif text-[#8a4f72] mb-3">
-          Abhishek & Tejakshi
-        </h3>
+      <footer className="bg-white border-t border-border py-12">
+        <div className="container text-center">
+          <h3 className="font-display text-2xl text-primary mb-2">
+            Abhishek & Tejakshi
+          </h3>
 
-        <p className="mb-4">May 29, 2026</p>
+          <p className="text-foreground/70 mb-2">May 29, 2026</p>
 
-        <div className="space-y-2">
-          <p>📞 +91 97412 15772</p>
-          <p>📞 +91 78925 83234</p>
+          <p className="text-foreground/70">+91 97412 15772</p>
+          <p className="text-foreground/70 mb-6">+91 78925 83234</p>
+
+          <p className="text-sm text-foreground/60">
+            "Two souls, one beautiful journey"
+          </p>
+
+          <div className="mt-8 pt-8 border-t border-border">
+            <p className="text-xs text-foreground/50">
+              With love and gratitude for your presence in our celebration
+            </p>
+          </div>
         </div>
       </footer>
     </div>
